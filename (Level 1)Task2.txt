@@ -1,0 +1,241 @@
+**********HTML***********
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Web Design Mastery| Creative Agency Page</title>
+    </head>
+    <body>
+<header>
+    <div class="container__left">
+        <div class="nav__logo">Brandon Watson</div>
+        <div class="content">
+            <h1 class="title">Be Creative,<br>Be Impresive</h1>
+            <p class="subtitle">Creative Designer and Social Media Officer</p>
+            <p class="description">
+                I have to be able to communicate ideas to a wide range of 
+                stackholders in both my own voice and in sprout's.<br/> communicating
+                on social.
+            </p>
+            <div class="action__btns">
+                <button class="btn portfolio">portfolio</button>
+                <button class="btn cv">Curriculum Vitae</button>
+            </div>
+       </div>
+    </div>
+    <div class="container__right">
+        <u1 class="nav__links">
+            <li class="links">Home</li>
+            <li class="links">About</li>
+            <li class="links">Projects</li>
+            <li class="links">Contact</li>
+        </u1>
+        <div class="image">
+            <img src="th.png" alt="profile">
+            <div class="image__content">
+                <h4>Brandon Watson</h4>
+                <p>Founder of PT.Cryptocoin price control</p>
+            </div>
+        </div>
+    </div>
+</header>
+    </body>
+</html>
+
+
+
+**********CSS**********
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root{
+    --primary-color:#000000;
+    --secondary-color:#1b1d1a;
+    --text-light:#767268;
+    --extra-light:#f3f4f6;
+}
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width:200%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+}
+
+header{
+    display: flex;
+    min-height:100vh;
+}
+
+.container_left,
+.container_right{
+    flex:1;
+    display:flex;
+    align-items: center;
+    position: relative;
+}
+
+.container_left{
+    background-color: var(--secondary-color);
+    justify-content: flex-end;
+}
+
+.nav__logo{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    margin-left: auto;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--extra-light);
+}
+
+.content{
+    max-width: 600px;
+    padding: 2rem;
+    padding-top: 5rem;
+    flex: 1;
+    color: var(--extra-light);
+    display: grid;
+    gap:2rem;
+}
+
+.title{
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 4rem;
+}
+
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.description{
+    max-width: 500px;
+}
+
+.action__btns{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.portfolio {
+    background-color: var(--extra-light);
+}
+
+.cv{
+    color: var(--text-light);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.cv:hover{
+    color: var(--text-light);
+}
+
+.nav__links {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    list-style:none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+.link {
+    padding: 2rem;
+    color: var(--extra-light);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.link:hover {
+    color: var(--extra-light);
+}
+
+.image{
+    max-width: 600px;
+    padding: 2rem;
+    padding-top: 3rem;
+    flex: 1;
+    display:grid;
+    place-content: center;
+    position: relative;
+}
+
+.image img {
+    max-width: 400px;
+}
+
+.image__content{
+    color: var(--extra-light);
+    position: absolute;
+    bottom: 0rem;
+    right: -9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.image__content h4{
+    background-color: var(--extra-light);
+    color: var(--primary-color);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.image__content p{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+@media(width <900px){
+    header{
+        flex-direction: column-reverse;
+    }
+
+    .container_left,
+    .container_right{
+        justify-content: center;
+    }
+
+    .content{
+        text-align: center;
+    }
+
+    .action__btns{
+        justify-content: center;
+    }
+}
